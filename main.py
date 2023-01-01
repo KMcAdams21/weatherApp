@@ -1,12 +1,13 @@
 import requests
-
+import methods
 
 # Program to give weather information when given information
 
-# Creating API request
-url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&temperature_unit=fahrenheit&timezone=auto&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&current_weather=true"
-req = requests.get(url)
-wetData = req.json()
+# Get location of device
+lat, lon = methods.getLocation()
+
+# Getting weather information using API
+wetData = methods.sendAPI(lat, lon)
 
 # Printing full result for testing means
 print(wetData)
