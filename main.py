@@ -11,9 +11,6 @@ city = address.get('city','')
 # Getting weather information using API
 wetData = methods.sendAPI(lat, lon)
 
-# Printing full result for testing means
-print(wetData)
-
 # Printing simple weather information
 lat = 'The weather for '+ city + ':'
 lon = 'The current temperature is ' + str(wetData['current_weather']['temperature']) + ' deg F'
